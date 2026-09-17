@@ -1,0 +1,158 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "title": "Auth Token acquisition",
+  "description": "A way to acquire access tokens for use with Tango's API",
+  "version": "1.0.0"
+ },
+ "servers": [
+  {
+   "url": "https://sandbox-auth.tangocard.com"
+  }
+ ],
+ "paths": {
+  "/oauth/token": {
+   "post": {
+    "tags": [
+     "Service token management"
+    ],
+    "summary": "Acquire Service Account token",
+    "description": "Acquire a Tango API access token using a Service Account credentials",
+    "requestBody": {
+     "content": {
+      "application/x-www-form-urlencoded": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "client_id": {
+          "type": "string",
+          "description": "Your client's ID",
+          "example": "<string>"
+         },
+         "client_secret": {
+          "type": "string",
+          "description": "Your client's secret",
+          "example": "<string>"
+         },
+         "username": {
+          "type": "string",
+          "description": "Service Accounts's username",
+          "example": "<string>"
+         },
+         "password": {
+          "type": "string",
+          "description": "Service Accounts's password",
+          "example": "<string>"
+         },
+         "scope": {
+          "type": "string",
+          "enum": [
+           "raas.all"
+          ],
+          "description": "List of space-separated OAuth scopes. Always set to raas.all",
+          "example": "raas.all"
+         },
+         "audience": {
+          "type": "string",
+          "description": "Audience for the token. For the 24 hour TTL set to https://api.tangocard.com/. For the 5 min TTL set to tango-api.bhn.com/fiveminute.",
+          "enum": [
+           "https://api.tangocard.com/",
+           "tango-api.bhn.com/fiveminute"
+          ],
+          "example": "https://api.tangocard.com/"
+         },
+         "grant_type": {
+          "type": "string",
+          "description": "Type of the OAuth flow in progress. Always set to password",
+          "enum": [
+           "password"
+          ],
+          "example": "password"
+         }
+        },
+        "required": [
+         "client_id",
+         "client_secret",
+         "username",
+         "password",
+         "scope",
+         "audience",
+         "grant_type"
+        ]
+       }
+      }
+     }
+    },
+    "parameters": [
+     {
+      "name": "Content-Type",
+      "in": "header",
+      "schema": {
+       "type": "string"
+      },
+      "description": "Optional.",
+      "example": "application/x-www-form-urlencoded"
+     },
+     {
+      "name": "Accept",
+      "in": "header",
+      "schema": {
+       "type": "string"
+      },
+      "description": "Optional.",
+      "example": "application/json"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "headers": {
+       "Content-Type": {
+        "schema": {
+         "type": "string",
+         "example": "application/json"
+        }
+       }
+      },
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object"
+        },
+        "example": {
+         "access_token": "<string>",
+         "scope": "<string>",
+         "expires_in": "<integer>",
+         "token_type": "Bearer"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad Request",
+      "content": {
+       "text/plain": {
+        "schema": {
+         "type": "string"
+        },
+        "example": ""
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized",
+      "content": {
+       "text/plain": {
+        "schema": {
+         "type": "string"
+        },
+        "example": ""
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {}
+}
