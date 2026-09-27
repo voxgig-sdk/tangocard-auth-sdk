@@ -1,0 +1,21 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      description: "A way to acquire access tokens for use with Tango's API"
+      servers: [
+        {
+          url: "https://sandbox-auth.tangocard.com"
+        }
+      ]
+      summary: "A way to acquire access tokens for use with Tango's API"
+      title: "Auth Token acquisition"
+      version: "1.0.0"
+      website: "https://sandbox-auth.tangocard.com"
+    }
+  }
+}
+

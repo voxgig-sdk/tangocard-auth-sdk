@@ -1,0 +1,18 @@
+# BasicServiceTokenManagementFlow
+
+main: kit: flow: BasicServiceTokenManagementFlow:
+{
+  entity: "service_token_management",
+  kind: "basic",
+  name: "BasicServiceTokenManagementFlow",
+  step: [
+    {
+      i: {
+        ref: "service_token_management_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicServiceTokenManagementFlow"
+}

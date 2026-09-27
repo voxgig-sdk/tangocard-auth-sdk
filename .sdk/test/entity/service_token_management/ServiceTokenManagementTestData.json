@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "service_token_management": {
+      "SERVICE_TOKEN_MANAGEMENT00": {
+        "access_token": "s28",
+        "expires_in": "s29",
+        "scope": "s2a",
+        "token_type": "s2b",
+        "id": "SERVICE_TOKEN_MANAGEMENT00"
+      },
+      "SERVICE_TOKEN_MANAGEMENT01": {
+        "access_token": "s50",
+        "expires_in": "s51",
+        "scope": "s52",
+        "token_type": "s53",
+        "id": "SERVICE_TOKEN_MANAGEMENT01"
+      },
+      "SERVICE_TOKEN_MANAGEMENT02": {
+        "access_token": "s78",
+        "expires_in": "s79",
+        "scope": "s7a",
+        "token_type": "s7b",
+        "id": "SERVICE_TOKEN_MANAGEMENT02"
+      }
+    }
+  },
+  "new": {
+    "service_token_management": {
+      "service_token_management_ref01": {
+        "access_token": "sa0",
+        "expires_in": "sa1",
+        "scope": "sa2",
+        "token_type": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /oauth/token": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

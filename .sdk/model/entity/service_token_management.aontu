@@ -1,0 +1,92 @@
+# Entity: service_token_management
+
+main: kit: entity: service_token_management: {
+
+  alias: field: {}
+
+  fields: {
+    access_token: {
+      h: "Access Token"
+      n: "access_token"
+      r: false
+      t: "`$STRING`"
+    }
+    expires_in: {
+      h: "Expires In"
+      n: "expires_in"
+      r: false
+      t: "`$STRING`"
+    }
+    scope: {
+      h: "Scope"
+      n: "scope"
+      r: false
+      t: "`$STRING`"
+    }
+    token_type: {
+      h: "Token Type"
+      n: "token_type"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "service_token_management"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /oauth/token"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                ex: "application/json"
+                k: "header"
+                n: "accept"
+                or: "accept"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "application/x-www-form-urlencoded"
+                k: "header"
+                n: "content_type"
+                or: "content_type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/oauth/token"
+          q: {
+            exist: [
+              "accept"
+              "content_type"
+            ]
+          }
+          s: [
+            {
+              lit: "oauth"
+            }
+            {
+              lit: "token"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

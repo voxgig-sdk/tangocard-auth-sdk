@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ServiceTokenManagement | Auth Token acquisition</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Auth Token acquisition<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/tangocard-auth-sdk">voxgig-sdk/tangocard-auth-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Auth Token acquisition</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a aria-current="page" href="../api/service_token_management.html">ServiceTokenManagement</a><div class="nav-sections"><a class="nav-section" href="#post-oauthtoken">POST /oauth/token</a></div></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/debug.html">Debug capture</a>
+<a href="../features/idempotency.html">Idempotency</a>
+<a href="../features/metrics.html">Metrics</a>
+<a href="../features/paging.html">Paging</a>
+<a href="../features/ratelimit.html">Rate limiting</a>
+<a href="../features/retry.html">Retry</a>
+<a href="../features/test.html">Test transport</a>
+<a href="../features/timeout.html">Timeout</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="servicetokenmanagement">ServiceTokenManagement</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-oauthtoken"><code>/oauth/token</code></a></td>
+<td><code>create</code></td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">created, err := client.ServiceTokenManagement(nil).Create(map[string]any{&quot;access_token&quot;: &quot;example&quot;, &quot;expires_in&quot;: &quot;example&quot;, &quot;scope&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+</code></pre>
+<h3 id="javascript">JavaScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/js.html#set-up-the-client">JavaScript setup</a>, then call the operations:</p>
+<pre><code class="language-js">const created = await client.ServiceTokenManagement().create({ access_token: &quot;example&quot;, expires_in: &quot;example&quot;, scope: &quot;example&quot; })
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local created, err = client:ServiceTokenManagement():create({ access_token = &quot;example&quot;, expires_in = &quot;example&quot;, scope = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$created = $client-&gt;ServiceTokenManagement()-&gt;create([&quot;access_token&quot; =&gt; &quot;example&quot;, &quot;expires_in&quot; =&gt; &quot;example&quot;, &quot;scope&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">created = client.ServiceTokenManagement().create({ &quot;access_token&quot;: &quot;example&quot;, &quot;expires_in&quot;: &quot;example&quot;, &quot;scope&quot;: &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const created = await client.ServiceTokenManagement().create({ access_token: &quot;example&quot;, expires_in: &quot;example&quot;, scope: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>access_token</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Access Token</td>
+</tr>
+<tr>
+<td><code>expires_in</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Expires In</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope</td>
+</tr>
+<tr>
+<td><code>token_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Token Type</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-oauthtoken" class="operation" data-method="post"><code>POST</code> /oauth/token</h3>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>Content-Type</code> | <code>header</code> | <code>string</code> | No | Optional. |
+| <code>Accept</code> | <code>header</code> | <code>string</code> | No | Optional. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/x-www-form-urlencoded</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audience</code></td>
+<td><code>enum: https://api.tangocard.com/, tango-api.bhn.com/fiveminute</code></td>
+<td>Yes</td>
+<td>Audience for the token. For the 24 hour TTL set to https://api.tangocard.com/. For the 5 min TTL set to tango-api.bhn.com/fiveminute.</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Your client's ID</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Your client's secret</td>
+</tr>
+<tr>
+<td><code>grant_type</code></td>
+<td><code>enum: password</code></td>
+<td>Yes</td>
+<td>Type of the OAuth flow in progress. Always set to password</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Service Accounts's password</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>enum: raas.all</code></td>
+<td>Yes</td>
+<td>List of space-separated OAuth scopes. Always set to raas.all</td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Service Accounts's username</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-ok" class="status" data-status="2xx">200: OK</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;access_token&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;expires_in&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;scope&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;token_type&quot;: &quot;Bearer&quot;
+}
+</code></pre>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>text/plain</code></p>
+<p>The response is <code>string</code>.</p>
+<h5 id="401-unauthorized" class="status" data-status="4xx">401: Unauthorized</h5>
+<p><code>text/plain</code></p>
+<p>The response is <code>string</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>
